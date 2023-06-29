@@ -1,1 +1,26 @@
-<p>create-page works!</p>
+<form class="max-w-[600px] mx-auto my-0" [formGroup]="form" (ngSubmit)="submit()">
+    <h1>Создание нового поста</h1>
+
+    <div class="form-control" [ngClass]="{'form-control-invalid': form.controls['title'].touched && form.controls['title'].invalid}">
+        <label for="title">Название поста:</label>
+        <input id="title" type="text" formControlName="title">
+        <div *ngIf="form.controls['title'].touched && form.controls['email'].invalid" class="validation">
+            <small *ngIf="form.controls['email'].errors?.['required']">Введите название поста</small>
+        </div>
+    </div>
+
+    <div class="form-control">
+        <label>Контент поста</label>
+<!--        <quill-editor formControlName="text"></quill-editor>-->
+    </div>
+
+    <div class="form-control" [ngClass]="{'form-control-invalid': form.controls['author'].touched && form.controls['author'].invalid}">
+        <label for="author">Автор поста:</label>
+        <input id="author" type="text" formControlName="author">
+        <div *ngIf="form.controls['title'].touched && form.controls['author'].invalid" class="validation">
+            <small *ngIf="form.controls['author'].errors?.['required']">Введите автора поста</small>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-block btn-dark" [disabled]="form.invalid">Создать пост</button>
+</form>

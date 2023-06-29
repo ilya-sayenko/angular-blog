@@ -1,1 +1,181 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.snow.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply box-border m-0 p-0
+    }
+
+    h1 {
+        @apply text-3xl font-bold
+    }
+
+    h2 {
+        @apply text-2xl font-bold
+    }
+
+    body {
+        @apply text-base leading-[1.6] bg-white text-dark;
+        font-family: "Roboto", sans-serif;
+    }
+
+    a {
+        @apply text-primary cursor-pointer no-underline
+        hover:text-[#666]
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        @apply w-full;
+    }
+
+    .container {
+        @apply max-w-[1100px] overflow-hidden m-auto px-8 py-0;
+    }
+
+    .card {
+        @apply mx-0 my-[0.7rem] p-4 border border-dark border-dotted;
+    }
+    .card-header {
+        @apply flex justify-between items-center;
+    }
+    .card-content {
+        @apply mb-2;
+    }
+
+    .list {
+        @apply mx-0 my-2;
+    }
+
+    .list li {
+        @apply pb-[0.3rem];
+    }
+
+    .btn {
+        @apply inline-block text-dark text-base cursor-pointer
+        transition-opacity duration-[0.2s] ease-in
+        mr-2 px-[1.3rem] py-[0.4rem] border-[none];
+        outline: none;
+    }
+
+    .btn:disabled {
+        @apply bg-light text-black
+    }
+
+    .btn:hover {
+        @apply opacity-80;
+    }
+
+    .btn-link {
+        @apply bg-none p-0 m-0
+    }
+
+    .btn-block {
+        @apply block w-full
+    }
+
+    .btn-sm {
+        @apply text-[0.8rem] mr-[0.2rem] px-4 py-[0.3rem];
+    }
+
+    .badge {
+        @apply inline-block text-[0.8rem] text-center text-dark m-[0.3rem] px-[0.7rem] py-[0.2rem] rounded-[5px] bg-light;
+    }
+
+    .alert {
+        @apply opacity-90 text-dark mx-0 my-4 p-[0.7rem] bg-light;
+    }
+
+    .btn-primary,
+    .badge-primary,
+    .alert-primary {
+        @apply text-white bg-primary;
+    }
+
+    .btn-light,
+    .badge-light,
+    .alert-light {
+        @apply text-dark bg-light;
+    }
+
+    .btn-dark,
+    .badge-dark,
+    .alert-dark {
+        @apply text-white bg-dark;
+    }
+
+    .btn-danger,
+    .badge-danger,
+    .alert-danger {
+        @apply text-white bg-danger;
+    }
+
+    .btn-success,
+    .badge-success,
+    .alert-success {
+        @apply text-white bg-success;
+    }
+
+    .btn-white,
+    .badge-white,
+    .alert-white {
+        @apply text-black bg-white border-[#ccc] border-solid border;
+    }
+
+    .badge-light {
+        @apply border-[#ccc] border-solid border;
+    }
+
+    .round-img {
+        @apply rounded-[50%]
+    }
+
+    .form-control {
+        @apply block mb-2
+    }
+
+    .form-control .validation {
+        @apply text-primary
+    }
+
+    .form-control-invalid {
+        @apply text-primary
+    }
+    .form-control-invalid input {
+        @apply border-primary
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    select,
+    textarea {
+        @apply block w-full text-[1.2rem] border p-[0.4rem] border-solid border-[#ccc];
+    }
+
+    .navbar {
+        @apply flex justify-between items-center z-[1] w-full opacity-90 mb-4 px-8 py-2
+    }
+
+    .navbar-main {
+        @apply justify-center border-solid border-b border-b-dark;
+    }
+
+    .navbar ul {
+        @apply flex;
+    }
+    .navbar a {
+        @apply text-white mx-1 my-0 p-[0.45rem] hover:text-light;
+    }
+    .navbar li.active a {
+        @apply text-dark font-bold cursor-default;
+    }
+}

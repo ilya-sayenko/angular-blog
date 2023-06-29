@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+    form {
+        @apply max-w-[600px] mx-auto my-0
+    }
+}
